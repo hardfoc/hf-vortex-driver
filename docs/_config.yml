@@ -1,0 +1,11 @@
+# Jekyll (GitHub Pages) — companion to Doxygen API under docs/html
+title: HF-Vortex-Driver
+description: HardFOC Vortex CAN host library
+theme: jekyll-theme-slate
+markdown: kramdown
+include:
+  - index.md
+  - integration.md
+  - architecture.md
+exclude:
+  - html

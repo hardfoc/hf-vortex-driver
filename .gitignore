@@ -67,3 +67,9 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Doxygen
+docs/html/
+
+# Generic example build dir name used in docs
+build-generic/

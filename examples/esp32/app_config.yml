@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# Reference scenarios for *future* full ESP32 / HAL + CANopenNode bring-up
+# This repository intentionally does **not** ship a buildable IDF + TWAI + CO stack
+# here — see `REFERENCE_ONLY.md` and the root `README.md` integration path.
+# ---------------------------------------------------------------------------
+#
+# scenarios describe **intent**; automation scripts in scripts/ are placeholders.
+
+project:
+  name: hf-vortex-driver
+  idf_version: ">=5.5"
+  target: esp32c6
+
+# Logical test recipes (not executed by CI in this repo)
+scenarios:
+  - name: can_frame_sanity
+    description: |
+      After HAL Vortex is initialized, acquire BaseCan from CommChannelsManager,
+      send one NMT via VortexBaseCanTransport + VortexHostSession.
+  - name: sdo_mode_402
+    description: |
+      Set CiA 402 mode of operation 0x6060:00 via expedited SDO, compare with
+      hf-utils-canopen built frames (optional assert in test harness on host or target).
+  - name: vortex_node_slave
+    description: |
+      Vortex board as CANopen slave: CANopenNode CO_driver on EspCan (separate
+      component tree) — not part of this driver package.
