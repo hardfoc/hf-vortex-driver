@@ -18,3 +18,10 @@ if(HF_VORTEX_BUILD_DOC_SNIPPETS)
   enable_testing()
   add_subdirectory(tests/docs)
 endif()
+
+# Host unit tests (tests/protocol): the protocol constants against CiA 301 / CiA 402.
+option(HF_VORTEX_BUILD_TESTS "Build and run the host unit tests" OFF)
+if(HF_VORTEX_BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(tests/protocol)
+endif()

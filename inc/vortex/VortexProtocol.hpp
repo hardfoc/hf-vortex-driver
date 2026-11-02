@@ -17,8 +17,8 @@ namespace hf::vortex {
 inline constexpr std::uint16_t kIdxErrorRegister = 0x1001U;
 /// CiA 301 — Pre-defined error field (0x1003) sub 0 = number of errors
 inline constexpr std::uint16_t kIdxPredefError = 0x1003U;
-/// CiA 301 — Error behavior (0x1021)
-inline constexpr std::uint16_t kIdxErrorBehavior = 0x1021U;
+/// CiA 301 — Error behavior (0x1029); sub 1 = communication error
+inline constexpr std::uint16_t kIdxErrorBehavior = 0x1029U;
 
 /// CiA 402 — Controlword (0x6040) — used for drive state machine
 inline constexpr std::uint16_t kIdxControlword = 0x6040U;

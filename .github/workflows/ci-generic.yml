@@ -17,10 +17,10 @@ jobs:
           cmake --build build-generic
       - name: Run
         run: ./build-generic/vortex_driver_generic_check
-      - name: Documentation code (build and check the frames the pages show)
+      - name: Documentation code and protocol test (build and check the frames the pages show)
         run: |
           git clone --depth 1 https://github.com/hardfoc/hf-internal-interface-wrap.git "$RUNNER_TEMP/iiw"
-          cmake -B build-docs -S . -DHF_VORTEX_BUILD_DOC_SNIPPETS=ON \
+          cmake -B build-docs -S . -DHF_VORTEX_BUILD_DOC_SNIPPETS=ON -DHF_VORTEX_BUILD_TESTS=ON \
             -DHF_VORTEX_BASECAN_INCLUDE_DIR="$RUNNER_TEMP/iiw/inc/base"
           cmake --build build-docs
           ctest --test-dir build-docs --output-on-failure
