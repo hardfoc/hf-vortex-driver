@@ -11,3 +11,10 @@ target_include_directories(hf_vortex_driver PUBLIC
 )
 
 # Generic host test: add_subdirectory(examples/generic) from parent if desired
+
+# The documentation code (tests/docs), compiled and checked on the host.
+option(HF_VORTEX_BUILD_DOC_SNIPPETS "Build and test the code shown on the documentation site" OFF)
+if(HF_VORTEX_BUILD_DOC_SNIPPETS)
+  enable_testing()
+  add_subdirectory(tests/docs)
+endif()
