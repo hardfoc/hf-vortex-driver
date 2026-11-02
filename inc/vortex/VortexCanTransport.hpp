@@ -3,7 +3,7 @@
  * @brief Abstract transport for Vortex / CANopen — implement with BaseCan, socketcan, or stubs.
  * @details Same role as `IBNO085Transport` or `TMC9660CommInterface` in other HardFOC drivers:
  *          the **external** library depends only on this interface. Platform code supplies
- *          `VortexBaseCanTransport` (HAL) or a test `LoopbackTransport`.
+ *          an adapter over `BaseCan` (HAL) or a test `LoopbackTransport`.
  * @copyright GPL-3.0-or-later
  */
 #pragma once

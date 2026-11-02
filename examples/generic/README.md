@@ -24,4 +24,4 @@ cmake --build build --config Release
 
 ## Relationship to `hf-utils-canopen`
 
-The wire format matches `CanOpen::BuildNmt` / `BuildSdoDownload` in `hf-utils-canopen`. In production firmware, you may use either this session class **or** build frames with `hf-utils-canopen` and send through `VortexBaseCanTransport` (HAL) — the bytes on the bus should be identical for the same node id / indices.
+The wire format matches `CanOpen::BuildNmt` / `BuildSdoDownload` in `hf-utils-canopen`. In production firmware, you may use either this session class **or** build frames with `hf-utils-canopen` and send through your `VortexCanTransport` (a `BaseCan` adapter on a board) — the bytes on the bus should be identical for the same node id / indices.

@@ -8,4 +8,4 @@ This directory documents **how** a future ESP32 example would be structured (`ap
 
 **Why:** A minimal bus exercise requires the whole HAL, IDF, and transceiver strapping; that lives in **hf-hal-vortex-v1** and the **Vortex** application, not in this portable driver.
 
-**To verify on real hardware:** use the HAL project’s `main` component, inject `VortexBaseCanTransport` (see `docs/integration.md`), and optionally compare frames against `examples/generic` loopback output.
+**To verify on real hardware:** use the HAL project’s `main` component, wrap the board's `BaseCan` in a `VortexCanTransport` (the adapter on the documentation's Porting page), and optionally compare frames against `examples/generic` loopback output.
