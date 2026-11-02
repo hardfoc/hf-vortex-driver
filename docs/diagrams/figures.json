@@ -1,0 +1,15 @@
+{
+  "driver-layers": {
+    "title": "Three layers, one of them yours",
+    "alt": "Layer diagram: the application calls VortexHostSession, which encodes NMT and expedited SDO frames and passes them to the VortexCanTransport interface, which your transport implements with BaseCan, SocketCAN or a loopback, which sends them on the CAN bus to the Vortex device.",
+    "description": "From top to bottom. Your application calls a VortexHostSession (its public methods are listed from inc/vortex/VortexHostSession.hpp). The session encodes CANopen NMT and expedited SDO download frames as VortexCanFrame values and hands each to the VortexCanTransport interface (its pure-virtual methods are listed from inc/vortex/VortexCanTransport.hpp). Your transport class implements that interface with BaseCan, SocketCAN or a test loopback, and puts the frame on a classic CAN bus. The Vortex device on the bus is the CANopen server.",
+    "profile": "overview",
+    "width": 1200,
+    "source": "docs/diagrams/figures/driver-layers.py",
+    "sources": [
+      "inc/vortex/VortexHostSession.hpp:VortexHostSession",
+      "inc/vortex/VortexCanTransport.hpp:VortexCanTransport",
+      "inc/vortex/VortexProtocol.hpp:NmtCommand"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "methods": [
+    "sendNmt",
+    "sdoDownloadExpedited"
+  ],
+  "hooks": [
+    "send"
+  ],
+  "nmt": [
+    "Start",
+    "Stop",
+    "PreOperational",
+    "ResetNode",
+    "ResetCommunication"
+  ],
+  "sources": [
+    "inc/vortex/VortexHostSession.hpp:VortexHostSession",
+    "inc/vortex/VortexCanTransport.hpp:VortexCanTransport",
+    "inc/vortex/VortexProtocol.hpp:NmtCommand"
+  ]
+}
