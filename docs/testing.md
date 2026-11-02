@@ -7,6 +7,7 @@ How the driver is checked: on the host, on every pull request, without hardware.
 | Check | Command | Covers |
 | --- | --- | --- |
 | Generic example | `cmake -B build -S examples/generic && cmake --build build && ./build/vortex_driver_generic_check` | NMT start and an SDO write through a loopback transport |
+| Protocol constants | `cmake -B build-tests -S . -DHF_VORTEX_BUILD_TESTS=ON && cmake --build build-tests && ctest --test-dir build-tests` | Every index and NMT command byte in `VortexProtocol.hpp` against CiA 301 / CiA 402 (`static_assert`, so a wrong value fails the build), and the SDO frame for error behaviour `0x1029:01` |
 | Documentation frames | `cmake -B build-docs -S . -DHF_VORTEX_BUILD_DOC_SNIPPETS=ON && cmake --build build-docs && ctest --test-dir build-docs` | Every snippet on this site compiles with `-Wall -Wextra -Werror`, and `check_frames` compares each frame it sends with the bytes the pages show |
 
 [`tests/docs/check_frames.cpp`](../tests/docs/check_frames.cpp) checks the NMT and SDO frames of the
@@ -17,7 +18,7 @@ sequence.
 
 | Workflow | What it checks |
 | --- | --- |
-| Host generic test (`ci-generic.yml`) | Builds and runs the generic example, then builds the documentation code (with the BaseCan adapter against hf-internal-interface-wrap `main`) and runs the frame check |
+| Host generic test (`ci-generic.yml`) | Builds and runs the generic example, then builds the documentation code (with the BaseCan adapter against hf-internal-interface-wrap `main`) and the protocol test, and runs both |
 | Docs (`ci-docs-publish.yml`) | Strict site build, figure and generated-table drift, Doxygen, offline link check, Lighthouse budget; publishes the site from `main` |
 
 The docs workflow calls the shared, versioned workflow of

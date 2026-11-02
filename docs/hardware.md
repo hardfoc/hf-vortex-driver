@@ -78,23 +78,22 @@ device firmware) is authoritative.
 | --- | --- | --- | --- |
 | `kIdxErrorRegister` | `0x1001` | index | CiA 301 — Error register (0x1001) subindex 0 |
 | `kIdxPredefError` | `0x1003` | index | CiA 301 — Pre-defined error field (0x1003) sub 0 = number of errors |
-| `kIdxErrorBehavior` | `0x1021` | index | CiA 301 — Error behavior (0x1021) |
+| `kIdxErrorBehavior` | `0x1029` | index | CiA 301 — Error behavior (0x1029); sub 1 = communication error |
 | `kIdxControlword` | `0x6040` | index | CiA 402 — Controlword (0x6040) — used for drive state machine |
 | `kIdxStatusword` | `0x6041` | index | CiA 402 — Statusword (0x6041) |
 | `kIdxModesOfOperation` | `0x6060` | index | CiA 402 — Modes of operation (0x6060) |
 | `kIdxModesDisplay` | `0x6061` | index | CiA 402 — Modes of operation display (0x6061) |
 | `kIdxPosActual` | `0x6064` | index | CiA 402 — Position actual value (0x6064) |
 | `kIdxVelActual` | `0x606C` | index | CiA 402 — Velocity actual value (0x606C) |
-| `kIdxVendorBase` | `0x2000` | index | Proposed vendor range (HardFOC) — 0x2000–0x2FFF manufacturer-specific. Reserve sub-ranges as products solidify. |
+| `kIdxVendorBase` | `0x2000` | index | Proposed HardFOC vendor range 0x2000–0x2FFF, inside the CiA 301 manufacturer-specific area (0x2000–0x5FFF). Reserve sub-ranges as products solidify. |
 | `kIdxVendorDeviceId` | `0x2000` | index | Example: 0x2000:01 — u32 build id / device magic (placeholder) |
 | `kSubVendorDeviceId` | `0x01` | sub-index |  |
 
 Source: [`inc/vortex/VortexProtocol.hpp`](../inc/vortex/VortexProtocol.hpp).
 <!-- /generated -->
 
-!!! warning "Check `kIdxErrorBehavior` against your device"
-    CiA 301 assigns error behaviour to `0x1029`; `0x1021` is the "store EDS" object. The constant is `0x1021` in
-    the header today: compare it with the node's EDS before writing to it.
+`tests/protocol` checks every index and NMT command byte in this table against CiA 301 and CiA 402 at compile
+time ([Testing](testing.md)).
 
 ## Reference documents
 
