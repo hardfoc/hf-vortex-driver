@@ -73,3 +73,4 @@ docs/html/
 
 # Generic example build dir name used in docs
 build-generic/
+site/

@@ -1,7 +1,7 @@
 # HF-VORTEX-DRIVER — Doxygen 1.9.x
 PROJECT_NAME           = "HF-Vortex-Driver"
 PROJECT_BRIEF          = "HardFOC Vortex CAN host library"
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = build/doxygen
 CREATE_SUBDIRS         = NO
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
@@ -9,6 +9,5 @@ INPUT                  = inc src docs
 FILE_PATTERNS          = *.hpp *.cpp *.md
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
-GENERATE_TREEVIEW      = YES
 USE_MDFILE_AS_MAINPAGE = docs/index.md
 QUIET                  = YES
