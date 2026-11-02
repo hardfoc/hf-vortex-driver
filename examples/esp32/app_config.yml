@@ -16,7 +16,7 @@ scenarios:
   - name: can_frame_sanity
     description: |
       After HAL Vortex is initialized, acquire BaseCan from CommChannelsManager,
-      send one NMT via VortexBaseCanTransport + VortexHostSession.
+      send one NMT via a BaseCan VortexCanTransport adapter + VortexHostSession.
   - name: sdo_mode_402
     description: |
       Set CiA 402 mode of operation 0x6060:00 via expedited SDO, compare with
