@@ -34,8 +34,8 @@ inline constexpr std::uint16_t kIdxPosActual = 0x6064U;
 inline constexpr std::uint16_t kIdxVelActual = 0x606CU;
 
 /**
- * @brief Proposed **vendor** range (HardFOC) — 0x2000–0x2FFF manufacturer-specific.
- *        Reserve sub-ranges as products solidify.
+ * @brief Proposed HardFOC **vendor** range 0x2000–0x2FFF, inside the CiA 301 manufacturer-specific area
+ *        (0x2000–0x5FFF). Reserve sub-ranges as products solidify.
  */
 inline constexpr std::uint16_t kIdxVendorBase = 0x2000U;
 /// Example: 0x2000:01 — u32 build id / device magic (placeholder)

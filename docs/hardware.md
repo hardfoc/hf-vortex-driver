@@ -85,7 +85,7 @@ device firmware) is authoritative.
 | `kIdxModesDisplay` | `0x6061` | index | CiA 402 — Modes of operation display (0x6061) |
 | `kIdxPosActual` | `0x6064` | index | CiA 402 — Position actual value (0x6064) |
 | `kIdxVelActual` | `0x606C` | index | CiA 402 — Velocity actual value (0x606C) |
-| `kIdxVendorBase` | `0x2000` | index | Proposed vendor range (HardFOC) — 0x2000–0x2FFF manufacturer-specific. Reserve sub-ranges as products solidify. |
+| `kIdxVendorBase` | `0x2000` | index | Proposed HardFOC vendor range 0x2000–0x2FFF, inside the CiA 301 manufacturer-specific area (0x2000–0x5FFF). Reserve sub-ranges as products solidify. |
 | `kIdxVendorDeviceId` | `0x2000` | index | Example: 0x2000:01 — u32 build id / device magic (placeholder) |
 | `kSubVendorDeviceId` | `0x01` | sub-index |  |
 
